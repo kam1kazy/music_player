@@ -1,0 +1,140 @@
+.App {
+  font-family: "Playfair Display", serif;
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+  text-align: left;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  background: -webkit-linear-gradient(49deg, #e8e7ef, #e3e5f0);
+  background: linear-gradient(49deg, #e8e7ef, #e3e5f0);
+  color: #26272d;
+}
+.main {
+  display: flex;
+  justify-content: center;
+  padding-top: 30px;
+}
+.player {
+  width: 380px;
+  background: -webkit-linear-gradient(49deg, #fafbfc, #e4e7f4);
+  background: linear-gradient(49deg, #fafbfc, #e4e7f4);
+  border-radius: 20px;
+  padding: 30px;
+}
+.now-play {
+  text-transform: uppercase;
+  font-weight: 500;
+  font-family: Tahoma, sans-serif;
+  color: #bcbdc4;
+}
+.top-bar {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+}
+.top-bar div:first-child,
+.top-bar div:last-child {
+  cursor: pointer;
+}
+.popup-setting {
+  background-color: #d2d3d6;
+  position: absolute;
+  right: 0;
+  top: 30px;
+  width: 180px;
+  z-index: 9;
+
+  -webkit-box-shadow: 4px 4px 7px 0px rgb(34 60 80 / 10%);
+  -moz-box-shadow: 4px 4px 7px 0px rgb(34 60 80 / 10%);
+  box-shadow: 4px 4px 7px 0px rgb(34 60 80 / 10%);
+}
+.popup-setting li {
+  cursor: pointer;
+  width: 100%;
+  padding: 17px;
+}
+.popup-setting li:hover {
+  background-color: #d8dbdf;
+}
+.cover {
+  position: relative;
+  overflow: hidden;
+  z-index: 9;
+}
+.cover-vinyl {
+  max-width: 100%;
+  height: 230px;
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+.cover-art {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  top: 110px;
+  z-index: -1;
+  width: 90px;
+}
+.cover-line {
+  position: absolute;
+  top: -60px;
+  left: -20px;
+  width: 440px;
+  z-index: -2;
+  animation: go-left-right 1.3s infinite alternate;
+}
+
+@keyframes go-left-right {
+  from {
+    left: -50px;
+  }
+  to {
+    left: -20px;
+  }
+}
+
+.song-name {
+  font-size: 25px;
+  font-weight: 600;
+  font-style: italic;
+}
+.song-name span {
+  color: #7e8392;
+  font-weight: 400;
+  font-size: 20px;
+  font-style: normal;
+  font-family: Tahoma, sans-serif;
+}
+
+.control {
+  margin-top: 60px;
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.control button {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+.skip-btn svg {
+  font-size: 21px;
+}
+.play-btn img {
+  width: 70px;
+}
+.name-next-song {
+  color: #bcbdc4;
+  font-weight: 500;
+  font-size: 12px;
+  font-family: Tahoma, sans-serif;
+}
