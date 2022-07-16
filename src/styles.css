@@ -75,17 +75,14 @@ body {
   margin-bottom: 30px;
 }
 .cover-art {
-  position: absolute;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  top: 110px;
-  z-index: -1;
-  width: 90px;
+  margin: 30px auto;
+  z-index: 1;
+  width: 160px;
+  box-shadow: 5px 5px 3px 0px rgb(34 35 42 / 19%);
 }
 .cover-line {
   position: absolute;
-  top: -60px;
+  top: -90px;
   left: -20px;
   width: 440px;
   z-index: -2;
@@ -115,7 +112,7 @@ body {
 }
 
 .control {
-  margin-top: 60px;
+  margin-top: 20px;
   margin-bottom: 40px;
   display: flex;
   justify-content: center;
@@ -137,4 +134,11 @@ body {
   font-weight: 500;
   font-size: 12px;
   font-family: Tahoma, sans-serif;
+}
+.details {
+  margin-bottom: 40px;
+}
+
+.wafetimeline {
+  height: 80px;
 }

@@ -1,37 +1,50 @@
-import React, { useState, useRef, useEffect } from "react";
-import PlayerDetails from "./PlayerDetails";
-import PlayerControl from "./PlayerControl";
+import React from "react";
+import Details from "./Details";
+import Waveform from './Waveform'
 
 function Player(props) {
-  const audioEl = useRef(null);
-  const [isPlaying, setIsPlaying] = useState(false);
 
-  useEffect(() => {
-    if(isPlaying) {
-        audioEl.current.play();
-    } else {
-        audioEl.current.play();
-    }
-  })
+    // Переключает трек по ID
+    const SkipSong = (forwards = true) => {
+        if (forwards) {
+            props.setCurrentSongIndex(() => {
+                let temp = props.currentSongIndex;
+                temp++;
 
-    // const SkipSong = (forwards = true) => {
-    //   if (forwards) {
-    //       props.setCurrentSongIndex
-    //   } else {
-    //
-    //   }
-    // }
+                if (temp > props.songs.length - 1) {
+                    temp = 0;
+                }
 
-  return (
-      <div className="player-panel">
-        <audio></audio>
+                return temp;
+            });
+        } else {
+            props.setCurrentSongIndex(() => {
+                let temp = props.currentSongIndex;
+                temp--;
 
-        <PlayerDetails song={props.song}/>
-        <PlayerControl />
+                if (temp < 0) {
+                    temp = props.songs.length - 1;
+                }
 
-        <p className="name-next-song"><strong>Next up:</strong> {props.nextSong.title} by {props.nextSong.artist}</p>
-      </div>
-  );
+                return temp;
+            });
+        }
+    };
+
+    return (
+        <div className="player-panel">
+            <Details song={props.songs[props.currentSongIndex]} />
+
+            <Waveform
+                audio={props.songs[props.currentSongIndex].src}
+                SkipSong={SkipSong}
+            />
+
+            <p className="name-next-song">
+                <strong>Next up:</strong> {props.songs[props.nextSongIndex].title} by {props.songs[props.nextSongIndex].artist}
+            </p>
+        </div>
+    );
 }
 
 export default Player;
