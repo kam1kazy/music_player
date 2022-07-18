@@ -4,6 +4,7 @@ import line from "../assets/images/line.png";
 function Details(props) {
     return (
         // Оформление для обложки
+        // (тут нечего интересного)
         <div className="details">
             <div className="cover">
                 <img

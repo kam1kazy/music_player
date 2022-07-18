@@ -4,7 +4,7 @@ import Waveform from './Waveform'
 
 function Player(props) {
 
-    // Переключает трек по ID
+    // Переключает трек по ID меняя индекс состояние
     const SkipSong = (forwards = true) => {
         if (forwards) {
             props.setCurrentSongIndex(() => {
@@ -31,15 +31,15 @@ function Player(props) {
         }
     };
 
+
     return (
         <div className="player-panel">
+            {/* Передаем ID текущего трека дальше в компоненты*/}
             <Details song={props.songs[props.currentSongIndex]} />
-
             <Waveform
                 audio={props.songs[props.currentSongIndex].src}
                 SkipSong={SkipSong}
             />
-
             <p className="name-next-song">
                 <strong>Next up:</strong> {props.songs[props.nextSongIndex].title} by {props.songs[props.nextSongIndex].artist}
             </p>

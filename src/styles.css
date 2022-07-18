@@ -27,6 +27,8 @@ body {
   background: linear-gradient(49deg, #fafbfc, #e4e7f4);
   border-radius: 20px;
   padding: 30px;
+  overflow: hidden;
+  position: relative;
 }
 .now-play {
   text-transform: uppercase;
@@ -141,4 +143,50 @@ body {
 
 .wafetimeline {
   height: 80px;
+}
+.playlist {
+  position: absolute;
+  background: rgb(240 242 249 / 97%);;
+  top: 0;
+  right: -250px;
+  width: 250px;
+  height: 100%;
+  border-radius: 20px;
+  z-index: 99;
+  box-shadow: -3px 4px 20px 0px #5a5a5a6e;
+  transition: right .2s ease;
+}
+.playlist.active{
+  right: 0;
+}
+.playlist li {
+  margin-bottom: 18px;
+  padding-bottom: 25px;
+  padding-left: 10px;
+  border-bottom: 1px solid;
+  cursor: pointer;
+  font-size: 13px;
+  transition: padding .4s ease;
+}
+.playlist li:hover {
+  padding-bottom: 30px;
+  padding-left: 4px;
+}
+.playlist li strong {
+  display: block;
+}
+.playlist span {
+  padding-right: 10px;
+  float: right;
+}
+.playlist-control {
+  text-align: right;
+  padding: 15px 20px 0 0px;
+}
+.playlist-control svg {
+  padding: 0;
+  cursor: no-drop;
+}
+.playlist ul {
+  margin: 20px 25px 25px;
 }
